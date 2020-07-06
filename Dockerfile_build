@@ -7,7 +7,7 @@ RUN yarn global add \
 
 RUN mkdir -p /vuepress/docs /vuepress/html
 
-COPY build.sh /build.sh
+COPY scripts/build.sh /build.sh
 RUN chmod +x /build.sh
 #EXPOSE 8080
 ENTRYPOINT ["sh", "/build.sh"]

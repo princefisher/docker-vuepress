@@ -7,6 +7,7 @@ RUN yarn global add \
 
 RUN mkdir -p /vuepress/docs /vuepress/html
 
-COPY build.sh /build.sh
-RUN chmod +x /build.sh
-ENTRYPOINT ["sh", "/build.sh"]
+COPY scripts/build.sh /build.sh
+COPY scripts/dev.sh /dev.sh
+RUN chmod +x /build.sh && chmod +x /dev.sh
+ENTRYPOINT ["sh"]

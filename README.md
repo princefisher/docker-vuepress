@@ -85,12 +85,21 @@ Then we can run each images like this:
 #### Run the Builder
 
 ```bash
-docker run -it --rm --name vuepress -v /data/my-project/docs/:/vuepress/docs/:rw -v /data/my-project/html:/vuepress/html/:rw vuepress:build
+docker run -it --rm --name vuepress -v /data/my-project/docs/:/vuepress/docs/:rw -v /data/my-project/html:/vuepress/html/:rw princefisher/vuepress:build
 ```
+
 #### Run the Dev Server 
 
 - once the server is running you can view the vuepress build results at <https://localhost:8080>
 
 ```bash
-docker run -it --rm --name vuepress -v /data/my-project/docs/:/vuepress/docs/:rw -p 8080:8080 vuepress:dev
+docker run -it --rm --name vuepress -v /data/my-project/docs/:/vuepress/docs/:rw -p 8080:8080 princefisher/vuepress:dev
+```
+
+#### Run the Interactive Image
+
+Instead of running either build/dev scripts directly, this image will just run as shell and you can choose which script to run yourself:
+
+```bash
+docker run -it --rm --name vuepress -v /data/my-project/docs/:/vuepress/docs/:rw -v /data/my-project/html:/vuepress/html/:rw -p 8080:8080 princefisher/vuepress:interactive
 ```

@@ -7,7 +7,7 @@ RUN yarn global add \
 
 RUN mkdir -p /vuepress/docs
 
-COPY dev.sh /dev.sh
+COPY scripts/dev.sh /dev.sh
 RUN chmod +x /dev.sh
 EXPOSE 8080
 ENTRYPOINT ["sh", "/dev.sh"]
